@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <meta name="author" content="willie">
+    <meta name="description" content="knockout t">
+    <meta name="keywords" content="keywords,here">
+    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <script type="text/javascript" src="bower_components/knockout/dist/knockout.debug.js"></script>
+</head>
+
+<body>
+
+    <h2>Your seat reservations</h2>
+
+    <table>
+        <thead><tr>
+            <th>Passenger name</th><th>Meal</th><th>Surcharge</th><th></th>
+        </tr></thead>
+        <!-- Todo: Generate table body -->
+        <tbody data-bind="foreach:seats">
+         <tr>
+            <td><input data-bind="value: name" /></td>
+            <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
+            <td data-bind="text: formattedPrice"></td>
+            <td><a data-bind="click: $parent.removeSeat" href="#">remove</a> </td>
+        </tr>        
+          
+        </tbody>
+    </table>
+    
+    <button data-bind="click: addSeat">Reserve another seat</button>
+    
+    
+    
+    <ul data-bind="foreach: availableMealCounters">
+        <li><span data-bind="text: mealName">meal</span>&nbsp;<span data-bind="text: count"></span></li> 
+    </ul>
+
+    <p>Total:<strong data-bind="text: totalAmount">xx</strong></p>
+</body>
+<script type="text/javascript" src="app.js"></script>
+
+</html>

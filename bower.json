@@ -1,0 +1,21 @@
+{
+  "name": "tutorial2",
+  "authors": [
+    "Willi Berger <willi.berger@gmx.at>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "^3.5.1"
+  }
+}

@@ -16,11 +16,11 @@ function formatPrice(price) {
     return "€ " + price.toFixed(2);
 }
 
-function AvailableMealCounter(id, name, price) {
+// clas for counting selected meals
+function AvailableMealCounter(id, name) {
     var self = this;
     self.id = id;
     self.mealName = name;
-    self.price = price;
     self.count = ko.observable("");
 };
 
@@ -31,8 +31,9 @@ function ReservationsViewModel() {
     // Non-editable catalog data - would come from the server
     self.availableMeals = [
         { mealId: "1", mealName: "Standard (sandwich)", price: 0 },
-        { mealId: "2", mealName: "Premium (lobster)", price: 34.95 },
-        { mealId: "3", mealName: "Ultimate (whole zebra)", price: 290 }
+        { mealId: "2", mealName: "Vegetarian (salad)", price: 20.25 },
+        { mealId: "3", mealName: "Premium (lobster)", price: 34.95 },
+        { mealId: "4", mealName: "Ultimate (whole zebra)", price: 290 }
     ];
 
     // updte counts of selected meals
@@ -54,12 +55,11 @@ function ReservationsViewModel() {
     ]);
 
 
-    // Non-editable catalog data - would come from the server
-    self.availableMealCounters = [ 
-        new AvailableMealCounter(1, "Standard (sandwich)", 0),
-        new AvailableMealCounter(2, "Premium (lobster)", 34.95),
-        new AvailableMealCounter(3, "Ultimate (whole zebra)", 290) 
-    ];
+    // initialze counters for selected meals
+    self.availableMealCounters = [];
+    self.availableMeals.forEach(meal => {
+        self.availableMealCounters.push(new AvailableMealCounter(meal.mealId, meal.mealName))
+    })
 
     // Operations
     self.addSeat = function () {

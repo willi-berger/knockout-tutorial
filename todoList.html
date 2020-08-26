@@ -22,14 +22,14 @@
     <nav class="navbar navbar-expand-sm bg-light">
         <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="seatReservation.html">Seat Reservation</a>
+                <a class="nav-link" href="seatReservation.html">Seat Reservation</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">ToDo List</a>
-          </li>
+                <a class="nav-link" href="#">ToDo List</a>
+            </li>
         </ul>
     </nav>
 
@@ -38,16 +38,34 @@
             <div class="col-sm-8">
 
                 <h2>ToDo List</h2>
-                <p>ToDo ;)</p>
 
- 
-                
+                <!-- Mails grid -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: todoItems">
+                        <tr >
+                            <td data-bind="text: id"></td>
+                            <td data-bind="text: title"></td>
+                            <td data-bind="text: completed"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
             </div>
-            
-            <div class="col-sm-4">   
-                
+
+            <div class="col-sm-4">
+
             </div>
- 
+
         </div>
     </div>
 
@@ -56,7 +74,5 @@
     <script src="vendor/tether/dist/js/tether.min.js"></script>
     <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="vendor/knockout/build/output/knockout-latest.debug.js"></script>
-    <script type="text/javascript" src="js/seatReservation.js"></script>
-</body>
-
-</html>
+    <script type="text/javascript" src="js/todoList.js"></script>
+</body </html>

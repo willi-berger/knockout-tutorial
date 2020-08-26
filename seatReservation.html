@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>knockout</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/stylesheet.css" type="text/css">
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>knockout.js tutorial</h1>
+        <p>some examples and tests with the knockout MVVM Javascript library</p>
+    </div>
+
+    <nav class="navbar navbar-expand-sm bg-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Seat Reservation</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="todoList.html">ToDo List</a>
+          </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+
+                <h2>Your seat reservations</h2>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Passenger name</th>
+                            <th>Meal</th>
+                            <th>Surcharge</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <!-- Todo: Generate table body -->
+                    <tbody data-bind="foreach:seats">
+                        <tr>
+                            <td><input type="text" data-bind="value: name" /></td>
+                            <td><select
+                                    data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select>
+                            </td>
+                            <td data-bind="text: formattedPrice"></td>
+                            <td><a data-bind="click: $parent.removeSeat" href="#">remove</a> </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <button class="button" data-bind="click: addSeat">Reserve another seat</button>
+                
+            </div>
+            
+            <div class="col-sm-4">   
+                <h2>Summary</h2>            
+                <ul data-bind="foreach: availableMealCounters">
+                    <li><span data-bind="text: mealName">meal</span>&nbsp;<span data-bind="text: count"></span></li>
+                </ul>
+    
+                <p>Total:&nbsp;<strong data-bind="text: totalAmount"></strong></p>
+            </div>
+ 
+        </div>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="vendor/jquery/dist/jquery.slim.js"></script>
+    <script src="vendor/tether/dist/js/tether.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="vendor/knockout/build/output/knockout-latest.debug.js"></script>
+    <script type="text/javascript" src="js/seatReservation.js"></script>
+</body>
+
+</html>

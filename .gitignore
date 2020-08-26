@@ -1,3 +1,5 @@
 #
 bower_components/knockout/build
 bower_components/knockout/src
+vendor
+

@@ -1,0 +1,16 @@
+{
+  "name": "knockout-tutorial",
+  "version": "1.0.0",
+  "description": "knock out tutorial",
+  "main": "index.js",
+  "repository": "https://github.com/willi-berger/knockout-tutorial.git",
+  "author": "Willi Berger <willi.berger@gmx.at>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1",
+    "knockout": "^3.5.1",
+    "tether": "^1.4.7"
+  }
+}

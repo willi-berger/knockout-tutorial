@@ -1,5 +1,4 @@
 #
-bower_components/knockout/build
-bower_components/knockout/src
-vendor
+# do not ignore vendor in gh-pages branch
+# vendor
 
